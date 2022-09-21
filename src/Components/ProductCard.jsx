@@ -8,7 +8,6 @@ import { addToCart } from "../Redux/Cart/CartSlice";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
 const ProductCard = ({ product }) => {
-  const title = product?.title.slice(0, 20);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const addProduct = () => {
@@ -34,7 +33,7 @@ const ProductCard = ({ product }) => {
         />
         <Card.Body>
         <div>
-          <Card.Title>{title}</Card.Title>
+          <Card.Title>{product.title}</Card.Title>
           
           <Card.Text>$ {formatNumber(Math.floor((product.price * 150)))}</Card.Text>
           <div style={{gap:'1em', display:'grid', marginLeft: '1em'}}>
