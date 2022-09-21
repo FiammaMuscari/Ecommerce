@@ -32,7 +32,7 @@ const ProductDetail = () => {
 
   const productHandler = () => {
     dispatch(addToCart(data));
-    toast.success(`${data?.title.slice(0, 20)} is added to cart`, {
+    toast.success(`${data?.title.slice(0, 20)} fue agregado al carrito`, {
       autoClose: 1000,
     });
   };
@@ -42,14 +42,14 @@ const ProductDetail = () => {
     if (state) {
       dispatch(removeFromWishList(data));
       toast.warning(
-        `${data?.title.slice(0, 20)} is remove from your wishlist`,
+        `${data?.title.slice(0, 20)} fue eliminado de favoritos`,
         {
           autoClose: 1000,
         }
       );
     } else {
       dispatch(addToWishList(data));
-      toast.success(`${data?.title.slice(0, 20)} is added to your wishlist`, {
+      toast.success(`${data?.title.slice(0, 20)} fue agregado a lista de favoritos`, {
         autoClose: 1000,
       });
     }

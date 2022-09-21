@@ -20,17 +20,19 @@ const WishList = () => {
     );
 
     return (
-      <div className={`container`} style={{ height:"32em"}}>
-        <div  >
+      <div>
+        <div>
           <h2 className="text-center py-3">Mis favoritos</h2>
           <div
-
+            style={{display: 'flex',flexWrap: 'wrap',justifyContent: 'center', gap: '1em'}}
           >
             {content}
           </div>
           {products?.wishList?.length > 0 && (
             <button
+              className="btn btn-danger"
               onClick={() => dispatch(removeAll())}
+              style={{display: 'flex', margin:' 1em auto'}}
             >
               Eliminar toda la lista
             </button>
