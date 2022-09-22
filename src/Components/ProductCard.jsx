@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const addProduct = () => {
     dispatch(addToCart(product));
-    toast.success(`${product?.title.slice(0, 20)} is added to cart`, {
+    toast.success(`${product?.title.slice(0, 20)} fue agregado a tu carrito`, {
       autoClose: 1000,
     });
   };

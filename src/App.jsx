@@ -35,7 +35,7 @@ function App() {
         </Routes>
       </div>
       <Footer/>
-      <ToastContainer position="top-right" />
+      <ToastContainer position="bottom-left" />
     </div>
   );
 }

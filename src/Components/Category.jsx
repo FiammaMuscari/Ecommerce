@@ -43,9 +43,9 @@ return (
             </div>
             {filter.map((product) => {
                 return (
-                    < div key={uuid()}>
+                    < React.Fragment key={uuid()}>
                     <ProductCard  product={product} />
-                    </ div>
+                    </ React.Fragment>
                 );
             })}
         </div>

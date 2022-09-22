@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
 import { IoLogInOutline } from "react-icons/io5";
 import { BiUser } from "react-icons/bi";
@@ -13,6 +13,7 @@ const NavBar = () => {
   const { cart } = useSelector((state) => state.cart);
   const { status } = useCheckAuth();
   const dispatch = useDispatch();
+  const navigate = useNavigate()
   const onLogout = () => {
     dispatch(startLogout());
     navigate("/login", {
