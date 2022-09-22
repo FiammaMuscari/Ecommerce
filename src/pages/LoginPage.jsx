@@ -45,7 +45,7 @@ export const LoginPage = () => {
           <div className="d-grid gap-2 mt-3">
             <input
               className="inputlogin"
-              style={{width:"40vw", borderRadius:"0.2em", padding:"0.5em"}}
+              style={{ borderRadius:"0.2em", padding:"0.5em"}}
               label="Correo"
               type="email"
               placeholder="correo@gmail.com"
@@ -56,7 +56,7 @@ export const LoginPage = () => {
             />
             <input
               className="inputlogin"
-              style={{width:"40vw", borderRadius:"0.2em", padding:"0.5em"}}
+              style={{ borderRadius:"0.2em", padding:"0.5em"}}
               label="Contraseña"
               type="password"
               placeholder="Contraseña"
@@ -64,12 +64,12 @@ export const LoginPage = () => {
               value={password}
               onChange={onInputChange}
             />
-            <button disabled={isChecking} className="btn btn-outline-primary mt-3" type="submit">
+            <button className="btn btn-outline-primary mt-3" type="submit">
               Login
             </button>
-            <button  className="btn btn-outline-primary mt-3" type="submit"onClick={onGoogleSignIn}
-                disabled={isChecking} >
-            Google
+            <button  className="btn btn-outline-primary mt-3 " type="submit"onClick={onGoogleSignIn}
+                 >
+            <img src="https://cdn-icons-png.flaticon.com/512/720/720255.png" style={{width:'7%'}} alt="google login"  />
             </button>
             <Link component={RouterLink} color="inherit" to="/register" style={{display: 'flex', justifyContent: 'end'}}>
               Crear una cuenta

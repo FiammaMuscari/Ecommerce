@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import uuid from "react-uuid";
+
 import ProductCard from "./ProductCard";
 
 
@@ -9,7 +10,6 @@ const Category = () =>{
    const [data, setData] = useState([]);
    const [filter, setFilter] = useState(data);
    const filterProduct = (cat) => {
-       console.log(data)
        const updatedProducts = data.filter((i) => i.category === cat);
        setFilter(updatedProducts);
    };
@@ -18,7 +18,6 @@ useEffect(() => {
   const getProductsAxios = async () => {
     try {
       const responseProducts = await axios.get('https://fakestoreapi.com/products');
-      console.log(responseProducts.data);
       setData(await responseProducts.data);
       setFilter(await responseProducts.data);
     } catch (error) { console.log(error); };
@@ -44,9 +43,9 @@ return (
             </div>
             {filter.map((product) => {
                 return (
-                    <>
-                    <ProductCard key={uuid()} product={product} />
-                    </>
+                    < div key={uuid()}>
+                    <ProductCard  product={product} />
+                    </ div>
                 );
             })}
         </div>

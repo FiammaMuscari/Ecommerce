@@ -1,9 +1,8 @@
 import React, { useMemo, useState } from "react";
 import { useForm } from "../hooks/useForm";
-import { Link, Link as RouterLink } from "react-router-dom";
+import { Link, Link as RouterLink, useNavigate } from "react-router-dom";
 import {startCreatingUserWithEmail} from '../Redux/auth/thunks'
 import { useDispatch } from "react-redux";
-
 
 
 const formData = {
@@ -36,10 +35,9 @@ const formValidations = {
 };
 
 
-
 export const RegisterPage = () => {
   const dispatch = useDispatch()
-
+  const navigate = useNavigate()
   const [formSubmited, setFormSubmited] = useState(false);
 
   const {
@@ -49,9 +47,6 @@ export const RegisterPage = () => {
     password,
     onInputChange,
     isFormValid,
-    displayNameValid,
-    passwordValid,
-    emailValid,
   } = useForm(formData, formValidations);
 
   const onSubmit = (event) => {
@@ -60,30 +55,30 @@ export const RegisterPage = () => {
     if (!isFormValid) return;
 
     dispatch(startCreatingUserWithEmail(formState));
-    navigate("/", {
+    navigate("/login", {
       replace: true,
     });
   };
 
   return (
     <>
-      <div className="d-flex justify-content-center align-items-center flex-column vw-100 vh-100 bg-dark ">
-
+      <div className="d-flex justify-content-center align-items-center flex-column vw-100 vh-100 ">
         <form onSubmit={onSubmit}>
           <div className="d-grid gap-2 mt-3">
+            <div>Tu usuario debe tener minimo 6 caracteres</div>
             <input
               className="inputlogin"
-              style={{width:"40vw", borderRadius:"0.2em", padding:"0.5em"}}
+              style={{ borderRadius:"0.2em", padding:"0.5em"}}
               label="Nombre Completo"
             type="text"
-            placeholder="Nombre Completo"
+            placeholder="Nombre de usuario"
             name="displayName"
             value={displayName}
             onChange={onInputChange}
             />
             <input
               className="inputlogin"
-              style={{width:"40vw", borderRadius:"0.2em", padding:"0.5em"}}
+              style={{ borderRadius:"0.2em", padding:"0.5em"}}
               label="Correo"
             type="email"
             placeholder="correo@gmail.com"
@@ -91,9 +86,10 @@ export const RegisterPage = () => {
             value={email}
             onChange={onInputChange}
             />
+            <div>Tu Contraseña debe tener minimo 6 caracteres</div>
             <input
               className="inputlogin"
-              style={{width:"40vw", borderRadius:"0.2em", padding:"0.5em"}}
+              style={{ borderRadius:"0.2em", padding:"0.5em"}}
               label="Contraseña"
             type="password"
             placeholder="Contraseña"

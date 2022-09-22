@@ -1,15 +1,24 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
 import { IoLogInOutline } from "react-icons/io5";
 import { BiUser } from "react-icons/bi";
 import { BsCart2 } from "react-icons/bs";
+import { useCheckAuth } from "../hooks/useCheckAuth";
+import { startLogout } from "../Redux/auth/thunks";
 
 
 const NavBar = () => {
   const { cart } = useSelector((state) => state.cart);
-
+  const { status } = useCheckAuth();
+  const dispatch = useDispatch();
+  const onLogout = () => {
+    dispatch(startLogout());
+    navigate("/login", {
+      replace: true,
+    });
+  };
   
   return (
     <div>
@@ -47,14 +56,26 @@ const NavBar = () => {
             <NavLink to="/wishlist" className="btn btn-outline-dark ">
               <AiFillHeart/>
               </NavLink>
+              {
+                status === 'authenticated'?
+                <NavLink to="/login" onClick={onLogout} className="btn btn-outline-dark ms-2">
+                <IoLogInOutline/>
+                LogOut
+              </NavLink>:
               <NavLink to="/login" className="btn btn-outline-dark ms-2">
                 <IoLogInOutline/>
                 Login
-              </NavLink>
-              <NavLink to="/register" className="btn btn-outline-dark ms-2">
+              </NavLink>}
+              {
+                status === 'authenticated'?
+              <NavLink to="/register" className="btn btn-outline-dark ms-2" style={{display:"none"}}>
                 <BiUser/>
                 Registro
-              </NavLink>
+              </NavLink>:
+              <NavLink to="/register" className="btn btn-outline-dark ms-2">
+              <BiUser/>
+              Registro
+            </NavLink>}
               <NavLink to="/cart" className="btn btn-outline-dark ms-2">
                 <BsCart2/>
                   ({cart?.length})

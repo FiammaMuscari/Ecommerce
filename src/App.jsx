@@ -34,9 +34,8 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
-      <Footer />
+      <Footer/>
       <ToastContainer position="top-right" />
-      <ToastContainer />
     </div>
   );
 }
