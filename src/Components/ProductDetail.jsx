@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Breadcrumb } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Redux/Cart/CartSlice";
@@ -16,6 +16,8 @@ const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { status } = useSelector((state)=> state.auth);
+  const isAuthenticated = useMemo(() => status === 'authenticated', [status])
 
   const state = useSelector((state) => state.wishlist.wishList).some(
     (p) => p?.id?.toString() === id
@@ -59,7 +61,6 @@ const ProductDetail = () => {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
   }
 
-
   return (
     <div  style={{display:'flex', width:'90%', flexDirection:'column', margin:'auto'}} >
       <Breadcrumb>
@@ -90,6 +91,7 @@ const ProductDetail = () => {
           <button
             className={`btn btn-primary mt-2 ms-2`}
             onClick={wishListHandler}
+            disabled={!isAuthenticated}
           >
             {state ? "Eliminar de favoritos" : "Agregar a favoritos"}
           </button>
