@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { STATUS } from "../constants/Status";
+import { STATUS } from "../constants/status";
 import { fetchProducts } from "../Redux/Product/ProductSlice";
 
 import Loader from "./Loader";
