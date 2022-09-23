@@ -14,7 +14,6 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@reduxjs/toolkit": "^1.8.5",
-    "@vercel/edge": "^0.0.4",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
     "firebase": "^9.10.0",
@@ -29,8 +28,7 @@
     "react-toastify": "^9.0.8",
     "react-uuid": "^1.0.3",
     "sweetalert2": "^11.4.33",
-    "swiper": "^8.4.2",
-    "vercel": "^28.4.2"
+    "swiper": "^8.4.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
