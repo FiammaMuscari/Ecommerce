@@ -56,11 +56,12 @@ const Cart = () => {
   } 
 
   return (
-    <div className="container py-5 mt-4">
+    <div className="container py-5 mt-4" style={{gap: '1em',
+      display: 'grid'}}>
       <h2 className="py-3 text-center">Carrito de compras</h2>
       {products?.cart?.map((product) => {
         return (
-          <div key={product.id} style={{display: "flex", gap: "1em"}}>
+          <div key={product.id} style={{display: "flex", justifyContent: 'space-evenly'}}>
             <div>
               <img src={product.image} alt="product" width="50px" />
             </div>
@@ -71,7 +72,7 @@ const Cart = () => {
               <h6>$ {formatNumber(Math.floor((product.price * 150)))}</h6>
             </div>
             <div className="cartBtns" style={{alignItems: "center", gap: "1em", display: "flex"}}>
-            <div style={{display: "flex", alignItems: "baseline"}}>
+            <div style={{display: "flex", alignItems: "baseline", gap: '1em'}}>
             <button
               className="btn btn-light"
               onClick={() => dispatch(reduceProduct(product))}

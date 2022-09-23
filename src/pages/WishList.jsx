@@ -50,7 +50,7 @@ const WishList = () => {
           </div>
         ) : (
           <div className="text-center" style={{display:'flex', flexDirection:'column', gap:'3em',marginTop:'2em'}}>
-          <h2 className="text-center py-3"><NavLink to="/login">Ingresa</NavLink> ó <NavLink to="/register">Resgistrate</NavLink> para armar tu lista de favoritos</h2>
+          <h2 className="text-center py-3"><NavLink to="/login">Ingresa</NavLink> ó <NavLink to="/register">Registrate</NavLink> para armar tu lista de favoritos</h2>
         <div style={{display:'flex', justifyContent:'center', marginBottom:'3em'}}>
         <img src='https://www.clevergirlfinance.com/wp-content/uploads/2021/08/Shopping-sprees.jpg' alt="wishlist empty" syle={{width: '80%',borderRadius: '1em'}} />
         </div>

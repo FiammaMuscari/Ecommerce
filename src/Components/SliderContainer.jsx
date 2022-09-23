@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 
-import { Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 
 const SliderContainer = () => {
 
@@ -15,7 +15,7 @@ const SliderContainer = () => {
   return (
     <>
     <div style={{ margin: "3em auto auto", width:'60em', display:'flex',maxWidth: '90%' }}>
-      <Swiper style={{borderRadius:'1em'}} navigation={true} loop={true} modules={[Navigation]} className="mySwiper ">
+      <Swiper style={{borderRadius:'1em'}} navigation={true} loop={true} modules={[Autoplay, Navigation]} autoplay={{delay: 2500, disableOnInteraction: false}} className="mySwiper ">
       <SwiperSlide ><img style={{maxWidth: '100%'}} src="https://i.ibb.co/x2y6tFP/1.png" alt="" /></SwiperSlide>
         <SwiperSlide>
         <img style={{maxWidth: '100%'}} src="https://i.ibb.co/znbF6F1/2.png" alt="" />

@@ -8,7 +8,6 @@
       { "source": "/products", "destination": "products" },
       { "source": "/contact", "destination": "/contact" },
       { "source": "/login", "destination": "login" },
-      { "source": "/register", "destination": "/register" },
-      { "source": "/(.*)", "destination": "/(.*)" }
+      { "source": "/register", "destination": "/register" }
     ]
   }

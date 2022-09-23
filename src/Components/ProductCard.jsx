@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
 import { addToCart } from "../Redux/Cart/CartSlice";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import '../../src/styles.css'
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -24,28 +25,33 @@ const ProductCard = ({ product }) => {
       <Card
         style={{ width: "18rem", textAlign: "center" }}
       >
-        <div style={{margin: 'auto'}}>
+        <div style={{margin: 'auto', display: 'flex', flexDirection: 'column'}} >
+          <div className="img-wrapper">
         <Card.Img
           onClick={() => navigate(`/products/${product?.id}`)}
           variant="top"
           src={product?.image}
-
+          className='inner-img '
         />
+        </div>
         <Card.Body>
         <div>
-          <Card.Title>{product.title}</Card.Title>
+          
+          
+          </div>
+        </Card.Body>
+        </div>
+        <Card.Title>{product.title}</Card.Title>
           
           <Card.Text>$ {formatNumber(Math.floor((product.price * 150)))}</Card.Text>
-          <div style={{gap:'1em', display:'grid', marginLeft: '1em'}}>
+          <div style={{gap:'1em', display:'grid', margin:'1em'}}>
           <Button  onClick={addProduct}>
           Comprar
           </Button>
           <NavLink to={`/products/${product.id}`} className="btn btn-outline-dark"> <AiOutlineArrowRight/> </NavLink>
+      
           </div>
-          </div>
-        </Card.Body>
-        </div>
-      </Card>
+          </Card>
   );
 };
 

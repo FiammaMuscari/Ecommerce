@@ -1,0 +1,20 @@
+.img-wrapper {  
+    overflow: hidden; 
+    display: inline-block;
+    margin: 'auto';
+    max-width: '9em';
+    max-width: 60%;
+margin: auto;
+padding-top: 1em;
+  }
+  
+  .inner-img {
+    transition: 0.3s;
+    cursor: pointer;
+    max-width:100%;
+    width: 30vw;
+  }
+  
+  .inner-img:hover {
+    transform: scale(1.1);
+  }
