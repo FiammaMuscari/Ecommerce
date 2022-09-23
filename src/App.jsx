@@ -2,10 +2,10 @@
 import { Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
+import Home from "./pages/Home";
+import About from "./pages/About";
 import Cart from "./pages/Cart";
-import WishList from "./Pages/WishList";
+import WishList from "./pages/WishList";
 import ProductDetail from "./Components/ProductDetail";
 import ProductList from "./Components/ProductList";
 import { Contact } from "./pages/Contact";
