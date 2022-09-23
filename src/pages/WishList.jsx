@@ -23,7 +23,7 @@ const WishList = () => {
     );
 
   return (
-    <div>
+    <div style={{paddingBottom:'6em'}}>
       <div>
         {status === "authenticated" ? (
           <div>

@@ -28,7 +28,8 @@
     "react-toastify": "^9.0.8",
     "react-uuid": "^1.0.3",
     "sweetalert2": "^11.4.33",
-    "swiper": "^8.4.2"
+    "swiper": "^8.4.2",
+    "vercel": "^28.4.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

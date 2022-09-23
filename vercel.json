@@ -1,0 +1,14 @@
+{
+    "rewrites": [
+      { "source": "/", "destination": "/" }, 
+      { "source": "/about", "destination": "/about" },
+      { "source": "/cart", "destination": "/cart" },
+      { "source": "/wishlist", "destination": "wishlist" },
+      { "source": "/products/:id", "destination": "/products/:id" },
+      { "source": "/products", "destination": "products" },
+      { "source": "/contact", "destination": "/contact" },
+      { "source": "/login", "destination": "login" },
+      { "source": "/register", "destination": "/register" },
+      { "source": "*", "destination": "*" }
+    ]
+  }
