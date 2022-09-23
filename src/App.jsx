@@ -2,18 +2,19 @@
 import { Route, Routes } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import WishList from "./Pages/WishList";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import Cart from "./Pages/Cart";
+import Cart from "./pages/Cart";
+import WishList from "./Pages/WishList";
 import ProductDetail from "./Components/ProductDetail";
-import ErrorPage from "./Pages/ErrorPage";
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
-import { Contact } from "./Pages/Contact";
-import ProductList from "./components/ProductList";
+import ProductList from "./Components/ProductList";
+import { Contact } from "./pages/Contact";
 import { LoginPage } from "./pages/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage";
+import ErrorPage from "./pages/ErrorPage";
+import Footer from "./Components/Footer";
+import NavBar from "./Components/NavBar";
+
 
 function App() {
   return (
